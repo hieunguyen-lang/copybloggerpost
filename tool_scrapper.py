@@ -9,9 +9,9 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
 from googletrans import Translator
-from lxml import etree
+from create_blog import CreatePost
 NEW_POST_ELEMENT='//*[@id="HTML10"]/div[1]/div/div/div[%s]'
-
+TEST_BLOG_ID = '4818145507962779412'
 chrome_options = Options()
 chrome_options.add_argument("--disable-usb")
 service = Service('.\chromedriver.exe')
@@ -56,3 +56,12 @@ def translate_url(chrome_options, service, listlinkpost):
     return  div_content.prettify()
 
 text_html = translate_url(chrome_options, service, listlinkpost)
+post = {
+        'kind': 'blogger#post',
+        'blog': {
+            'id': TEST_BLOG_ID  # ID của blog
+        },
+        'title': 'A test post',
+        'content': text_html
+    }
+CreatePost.create_blogger(post,TEST_BLOG_ID)
