@@ -7,7 +7,7 @@ from googleapiclient.discovery import build
 # Thay đổi TEST_BLOG_ID thành ID blog của bạn
 
 
-# Các phạm vi cần thiết cho Blogger API
+# Các phạm vi cần thiết cho Blogger API f
 SCOPES = ['https://www.googleapis.com/auth/blogger']
 
 class CreatePost:
