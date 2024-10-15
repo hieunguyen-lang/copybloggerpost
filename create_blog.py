@@ -34,6 +34,13 @@ class CreatePost:
         posts_insert = service.posts().insert(blogId=blog_id, body=post)
         response = posts_insert.execute()
         return response
+    @staticmethod
+    def search(search, blog_id):
+        service = build('blogger', 'v3', credentials=CreatePost.creds)
+        # Gửi yêu cầu tạo bài viết
+        posts_insert = service.posts().search(blogId=blog_id, q=search)
+        response = posts_insert.execute()
+        return response
 
 
  # Tạo bài viết mới

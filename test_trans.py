@@ -11,3 +11,4 @@ translated = translator.translate(text, src='vi', dest='en')
 
 print("Tiếng Việt:", text)
 print("Tiếng Anh:", translated.text)
+
