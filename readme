@@ -1,1 +1,3 @@
 .\myenv\Scripts\activate
+to convert to exe
+pyinstaller --onefile filename.py
